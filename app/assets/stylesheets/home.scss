@@ -1,0 +1,20 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+
+
+.w3-bar{background-color: slateblue; }
+.w3-bar-item,.w3-button{color: white;}
+.mySlides{display:none; height:60vh;width:95vw;}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+.contact{
+    background-image: url('contact.jpg');
+}
+
+
+

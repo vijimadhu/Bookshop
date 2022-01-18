@@ -1,0 +1,179 @@
+<div class="w3-tag w3-round w3-green w3-large" style="padding:20px; width:95vw;">
+  <div class="w3-tag w3-round w3-green w3-border w3-border-white-large">
+    Welcome to Books Shop
+  </div>
+</div>
+<br><br>
+<input class="material-icons" style="width:85vw;" type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+<br><br>
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="background-color:black;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" style="block "
+  onclick="w3_close()">Close &times;</button>
+  <a href="health" class="w3-bar-item w3-button">Health</a>
+  <a href="childrensbooks" class="w3-bar-item w3-button">Childrens Books</a>
+  <a href="computing" class="w3-bar-item w3-button">Computing</a>
+  <a href="entertainment" class="w3-bar-item w3-button">Entertainment</a>
+  <a href="sports" class="w3-bar-item w3-button">Sports</a>
+  <a href="Food" class="w3-bar-item w3-button">Food & Drink</a>
+  <a href="Business" class="w3-bar-item w3-button">Business</a>
+  
+</div>
+
+<div id="main">
+
+<div class="w3-teal">
+  <button id="openNav" class="w3-button w3-teal w3-xlarge" style="text-color:black;align:left " onclick="w3_open()">&#9776;Book Category</button>
+  
+</div>
+</div>
+
+<nav>
+  <ul>
+<div class="row">
+
+    <div class="w3-bar">
+        <div class="w3-dropdown-click">
+    <button class="w3-button w3-green" onclick="dropFunction()">☰ All Books</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card w3-light-grey" id="myDIV">
+      
+      <a class="w3-bar-item w3-button" href="bookdetails">Books Details</a>
+      
+    </div>
+  </div>
+        <a href="" class="w3-bar-item w3-button" style="color:white;"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="about" class="w3-bar-item w3-button" style="color:white;"><i class="fa fa-fw fa-user"></i>About</a>
+        <a href="contact" class="w3-bar-item w3-button" style="color:white;"><i class="fa fa-fw fa-envelope"></i>Contactus</a>
+        
+        
+     
+    
+    
+         <a href="signup" class="w3-bar-item w3-button" style="color:white;"><i class="fa fa-fw fa-user"></i>Signup</a>
+         <a href="login"  class="w3-bar-item w3-button" style="color:white;"><i class="fa fa-fw fa-male"></i>Login</a>
+         
+
+         <br><br>
+     
+          
+    
+     
+  </div>
+
+
+        
+    
+      
+    </div>
+  </ul>
+</nav>
+
+<br><br>
+
+
+
+
+
+<div class="w3-content w3-display-container" style="width:100vw;float:left">
+
+
+<img class="mySlides" src=<%= asset_path "c.jpg" %>>
+<img class="mySlides" src=<%= asset_path "d.jpg" %>>
+<img class="mySlides" src=<%= asset_path "g.jpg" %>>
+<img class="mySlides" src=<%= asset_path "e.jpg" %>>
+<img class="mySlides" src=<%= asset_path "a.jpg" %>>
+<div class="w3-center w3-display-bottommiddle" style="width:100%" style="height:100%">
+
+  
+
+  <div class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</div>
+  <div class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</div>
+  <span class="w3-badge demo w3-border" onclick="currentDiv(1)"></span>
+  <span class="w3-badge demo w3-border" onclick="currentDiv(2)"></span>
+  <span class="w3-badge demo w3-border" onclick="currentDiv(3)"></span>
+  <span class="w3-badge demo w3-border" onclick="currentDiv(4)"></span>
+  <span class="w3-badge demo w3-border" onclick="currentDiv(5)"></span>
+
+  
+
+
+
+  
+</div>
+</div>
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+  <h4>Footer</h4>
+  <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Book Shop.com</a></p>
+</footer>
+ 
+
+
+
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+// Dropdown
+function dropFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Filter
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDIV");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+
+
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+
+
+</script>

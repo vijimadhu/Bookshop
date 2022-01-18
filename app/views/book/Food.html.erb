@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag params[:controller] %>
+<p id="notice"><%= notice %></p>
+
+
+
+<h1 class="newbook5">Food</h1>
+<div class="w3-auto" >
+<div class="row">
+  
+
+
+    <% @newbooks.each do |newbook| %>
+      <div class="col" style="width:21vw; height:80vh; overflow:hidden; float:left; margin:2%; ">
+      <div class="w3-card"><img style="width:20vw; height:60vh;" src=<%= newbook.img.url %>></div>
+        
+        <br><%= newbook.category %>
+        <br><%= newbook.bookname %></p>
+        <br><%= newbook.description %>
+        <br><%= newbook.price %></p>
+        <br><%= newbook.bookarrivals %></p>
+        <br><%= newbook.language %></p>
+        <br><%= newbook.author %></p>
+        <br><%= newbook.itemcondition %></p>
+        <br><%= newbook.availability %></p>
+        
+        
+        
+  
+        
+        
+        
+      </div>
+    <% end %>
+  
+  </div>
+</div>
